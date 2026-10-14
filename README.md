@@ -1,15 +1,21 @@
-# Gerador de Contratos
+# Gerador de Contratos — MVVM
 
-## Sobre
+**Projeto histórico — sem manutenção ativa.** Este repositório é preservado como registro de uma etapa anterior de desenvolvimento. Não há previsão de novas funcionalidades ou correções.
 
-Um aplicativo que obtém informações de clientes a partir de uma base Firebird 2.5, e permite a criação de arquivos *.docx modulares de acordo com informações previamente cadastradas.
+## Sobre o projeto
 
-## Tecnologias
+Aplicação desktop para montar contratos modulares em formato Word a partir de clientes e serviços cadastrados. O objetivo era reunir cláusulas, quantidades e valores em documentos adaptados a cada cliente.
 
-A base original de onde as informações da empresa são obtidas é uma Firebird 2.5 de terceiros, de forma que a estrutura não é controlada pelo nosso aplicativo. Por outro lado, além dos dados necessários para a formulação de um contrato, mais nenhuma informação é obtida, e nenhuma é gravada.
+## Escopo preservado
 
-Os dados usados no funcionamento do aplicativo ficam em uma simples base SQLite, que inclui tipos de contrato, suas descrições, clientes/contratos/valores relacionados assim como o caminho do arquivo *.docx gerado.
+A aplicação organiza clientes, contratos-base e contratos associados, com geração de arquivos `.docx`. O código também contém integração com Bling e comandos relacionados a contas a receber; a documentação original descreve a consulta de dados de clientes em uma base Firebird 2.5 de terceiros.
 
-Os contratos gerados em formato *.docx são criados utilizando-se a biblioteca [DocX (1.8.0)](https://www.nuget.org/packages/DocX/), e são completamente modulares, não restringindo o número de cláusulas inseridas por cliente.
+## Tecnologias e organização
 
-#### Ainda em uso em Trilha Tecnologia.
+C#, WPF e .NET 5, com organização MVVM e Entity Framework Core 5. A configuração de persistência consultada utiliza SQLite, e a geração de documentos usa DocX 2.0.0, conforme o arquivo de projeto; `Services/ContratoDocService.cs` concentra a composição do Word.
+
+## Estado e contexto de execução
+
+A execução depende de Windows, banco e integrações configurados, além das imagens utilizadas nos documentos. O README anterior mencionava uso na Trilha Tecnologia; essa informação é preservada como contexto histórico, sem afirmar uso atual.
+
+Esta documentação foi revisada a partir dos arquivos versionados. Não foram executados build, testes funcionais ou integrações durante a revisão; as versões citadas descrevem o projeto preservado, não uma recomendação de stack para novos sistemas.
